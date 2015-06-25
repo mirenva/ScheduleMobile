@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.mirenva.schedulemobile.Parameters">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parameter_group"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:hint="@string/parameter_group"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parameter_day"
+        android:layout_below="@+id/parameter_group"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/parameter_group"
+        android:hint="@string/parameter_day" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parameter_hours"
+        android:layout_below="@+id/parameter_day"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/parameter_day"
+        android:hint="@string/parameter_hours" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parameter_lecture"
+        android:layout_below="@+id/parameter_hours"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/parameter_hours"
+        android:hint="@string/parameter_lecture" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parameter_teacher"
+        android:layout_below="@+id/parameter_lecture"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/parameter_lecture"
+        android:hint="@string/parameter_teacher" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/parameter_room"
+        android:layout_below="@+id/parameter_teacher"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/parameter_teacher"
+        android:hint="@string/parameter_room" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="getSchedule" />
+
+</RelativeLayout>
