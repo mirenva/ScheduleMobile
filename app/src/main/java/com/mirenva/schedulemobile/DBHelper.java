@@ -13,9 +13,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d("DBHelper", "--- onCreate database ---");
+        Log.d("MyApplication", "created database");
 
-        db.execSQL("create table Schedule ("
+        db.execSQL("create table schedule ("
                 + "id integer primary key autoincrement,"
                 + "room text,"
                 + "day text,"

@@ -18,7 +18,7 @@ public class Parameters extends Activity {
 
     public void getSchedule(View v){
         Intent intentService = new Intent(this, GetterSchedule.class);
-        Intent intentActivity = new Intent(this, MainActivity.class);
+        Intent intentActivity = new Intent(this, ViewSchedule.class);
 
         EditText room = (EditText) findViewById(R.id.parameter_room);
         EditText day = (EditText) findViewById(R.id.parameter_day);

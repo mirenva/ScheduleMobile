@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.IBinder;
-import android.util.Log;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,11 +61,11 @@ public class GetterSchedule extends Service {
             ScheduleInterface scheduleInterface = restAdapter.create(ScheduleInterface.class);
             Schedule schedule = scheduleInterface.getSchedule(parameters);
 
-            Log.d("GETTERSHCE", schedule.objects[1].teacher);
-
             ContentValues cv = new ContentValues();
             DBHelper dbHelper = new DBHelper(getApplicationContext());
             SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            db.delete("schedule", null, null);
 
             for (Schedule.Objects elem : schedule.objects) {
                 cv.put("room",        elem.room);
@@ -76,12 +75,13 @@ public class GetterSchedule extends Service {
                 cv.put("lecture",     elem.lecture);
                 cv.put("teacher",     elem.teacher);
 
-                db.insert("Schedule", null, cv);
+                db.insert("schedule", null, cv);
             }
 
             dbHelper.close();
 
-            //TODO добавить широковещательное уведомление
+            Intent intent = new Intent("EndOperation");
+            sendBroadcast(intent);
         }
 
     }
