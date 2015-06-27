@@ -25,10 +25,10 @@ public class GetterSchedule extends IntentService {
 
         Map<String, String> parameters = new HashMap<>();
 
-        parameters.put("room",    intent.getStringExtra("room"));
-        parameters.put("day",     intent.getStringExtra("day"));
-        parameters.put("groupNumber",   intent.getStringExtra("group"));
-        parameters.put("hours",   intent.getStringExtra("hours"));
+        parameters.put("room", intent.getStringExtra("room"));
+        parameters.put("day", intent.getStringExtra("day"));
+        parameters.put("groupNumber", intent.getStringExtra("group"));
+        parameters.put("hours", intent.getStringExtra("hours"));
         parameters.put("lecture", intent.getStringExtra("lecture"));
         parameters.put("teacher", intent.getStringExtra("teacher"));
 
