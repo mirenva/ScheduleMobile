@@ -17,7 +17,7 @@ public class GetterSchedule extends IntentService {
 
 
     public GetterSchedule() {
-        super("service");
+        super("GetterSchedule");
     }
 
     @Override
