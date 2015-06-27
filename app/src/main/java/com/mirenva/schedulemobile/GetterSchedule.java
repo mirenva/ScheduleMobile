@@ -1,6 +1,6 @@
 package com.mirenva.schedulemobile;
 
-import android.app.Service;
+import android.app.IntentService;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,10 +13,15 @@ import retrofit.RestAdapter;
 import retrofit.http.GET;
 import retrofit.http.QueryMap;
 
-public class GetterSchedule extends Service {
+public class GetterSchedule extends IntentService {
+
+
+    public GetterSchedule() {
+        super("service");
+    }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    public void onHandleIntent(Intent intent) {
 
         Map<String, String> parameters = new HashMap<>();
 
@@ -27,16 +32,8 @@ public class GetterSchedule extends Service {
         parameters.put("lecture", intent.getStringExtra("lecture"));
         parameters.put("teacher", intent.getStringExtra("teacher"));
 
-//        Log.d("GetterSchedule", "room: " + parameters.get("room"));
-//        Log.d("GetterSchedule", "day: " + parameters.get("day"));
-//        Log.d("GetterSchedule", "groupNumber: " + parameters.get("groupNumber"));
-//        Log.d("GetterSchedule", "hours: " + parameters.get("hours"));
-//        Log.d("GetterSchedule", "lecture: " + parameters.get("lecture"));
-//        Log.d("GetterSchedule", "teacher: " + parameters.get("teacher"));
-
         new ScheduleDownloader(parameters).start();
 
-        return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
